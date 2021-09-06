@@ -1,0 +1,27 @@
+---
+- name:
+  hosts: windows
+
+  tasks:
+   - name: Create a new domain group
+     win_domain_group:
+      name: developers
+      scope: domainlocal
+      description: Developers Group
+      state: present
+   - name: Creating a new user
+     win_domain_user:
+        name: Mbaye
+        firstname: Alioune
+        surname: ABM
+        password: Accel2021@
+        state: present
+        groups:
+          - developers
+        street: virage
+        city: dakar
+        state_province: senegal
+        postal_code: 12000
+        country: DK
+        attributes:
+          telephoneNumber: 772247049
