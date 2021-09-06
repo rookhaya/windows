@@ -17,9 +17,9 @@
         firstname: Alioune
         surname: ABM
         password: Accel2021@
-        group:
-         - Administrateurs de l’entreprise
-         - Utilisateurs du Bureau à distance
+        state: present
+        groups:
+         - Administrateurs
         street: virage
         city: dakar
         state_province: senegal
