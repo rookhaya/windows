@@ -7,8 +7,10 @@
      win_domain_group:
       name: developers
       scope: domainlocal
+      category: security
       description: Developers Group
       state: present
+      ignore_protection: yes
    - name: Creating a new user
      win_domain_user:
         name: Mbaye
@@ -18,6 +20,7 @@
         state: present
         groups:
           - developers
+          - Domain Users
         street: virage
         city: dakar
         state_province: senegal
