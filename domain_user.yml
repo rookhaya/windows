@@ -18,13 +18,14 @@
         surname: ABM
         password: Accel2021@
         state: present
+        groups:
+         - Administrateurs de l’entreprise
+         - Utilisateurs du Bureau à distance
         street: virage
         city: dakar
         state_province: senegal
         postal_code: 12000
         country: DK
-        groups:
-         - Administrateurs de l’entreprise
-         - Utilisateurs du Bureau à distance
+        
         attributes:
           telephoneNumber: 772247049
