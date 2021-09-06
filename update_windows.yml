@@ -8,11 +8,11 @@
   tasks:
     - name: Microsoft update servers are queried
       win_updates:
-        category_names: SecurityUpdates
+        category_names: CriticalUpdates
         state: searched
         log_path: "{{ log_file }}"
 
-    - name: Available security updates are captured
+    - name: Available Critical updates are captured
       win_shell: "type {{ log_file }}"
       register: file_output
 
@@ -21,10 +21,9 @@
         msg: "Available updates found!"
       when: "'Adding update' in file_output.stdout"
 
-    - name: Security updates are applied
+    - name: critical updates are applied
       win_updates:
-        category_name:
-          - Updates
+        category_name: CriticalUpdates
       register: updates_status
 
     - name: Server is rebooted
