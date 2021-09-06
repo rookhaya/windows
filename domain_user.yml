@@ -26,11 +26,17 @@
         country: DK
         attributes:
           telephoneNumber: 772247049
-   - name: Adding domain users to a domain group
+   - name: Adding Mbaye to a Administrateurs
      win_domain_group_membership:
-       name: 
-        - Administrateurs
-        - Utilisateurs du Bureau à distance
+       name: Administrateurs
        members: 
         - Mbaye
        state: present
+   - name: Adding Mbaye to Utilisateurs du Bureau à distance
+     win_domain_group_membership:
+       name: Utilisateurs du Bureau à distance
+       members: 
+        - Mbaye
+       state: present
+
+         
