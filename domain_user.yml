@@ -17,7 +17,7 @@
         firstname: Alioune
         surname: ABM
         password: Accel2021@
-        groups:
+        group:
          - Administrateurs de l’entreprise
          - Utilisateurs du Bureau à distance
         street: virage
