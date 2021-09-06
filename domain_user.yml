@@ -28,7 +28,9 @@
           telephoneNumber: 772247049
    - name: Adding domain users to a domain group
      win_domain_group_membership:
-       name: Administrateurs
+       name: 
+        - Administrateurs
+        - Utilisateurs du Bureau à distance
        members: 
         - Mbaye
        state: present
