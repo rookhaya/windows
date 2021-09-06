@@ -10,9 +10,6 @@
       category: security
       description: Developers Group
       state: present
-      groups:
-        - Administrateurs de l’entreprise
-        - Utilisateurs du Bureau à distance
       ignore_protection: yes
    - name: Creating a new user
      win_domain_user:
@@ -26,5 +23,8 @@
         state_province: senegal
         postal_code: 12000
         country: DK
+        groups:
+         - Administrateurs de l’entreprise
+         - Utilisateurs du Bureau à distance
         attributes:
           telephoneNumber: 772247049
