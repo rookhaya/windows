@@ -21,10 +21,13 @@
         msg: "Available updates found!"
       when: "'Adding update' in file_output.stdout"
 
-    - name: Install all security updates with automatic reboots
+    - name: Security updates are applied
       win_updates:
-        category_names: SecrurityUpdates
-    
+        category_name:
+          - Updates
+      register: updates_status
+
     - name: Server is rebooted
       win_reboot:
       when: updates_status.reboot_required
+   
