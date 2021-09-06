@@ -17,7 +17,6 @@
         firstname: Alioune
         surname: ABM
         password: Accel2021@
-        state: present
         groups:
          - Administrateurs de l’entreprise
          - Utilisateurs du Bureau à distance
