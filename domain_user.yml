@@ -18,13 +18,17 @@
         surname: ABM
         password: Accel2021@
         state: present
-        groups:
-         - Administrateurs
+        
         street: virage
         city: dakar
         state_province: senegal
         postal_code: 12000
         country: DK
-        
         attributes:
           telephoneNumber: 772247049
+   - name: Adding domain users to a domain group
+     win_domain_group_membership:
+       name: Administrateurs
+       members: 
+        - Mbaye
+       state: present
