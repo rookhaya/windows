@@ -19,7 +19,7 @@
         password: Accel2021@
         state: present
         groups:
-          - Users
+          - developers
         street: virage
         city: dakar
         state_province: senegal
