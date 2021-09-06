@@ -1,6 +1,7 @@
 ---
 - name: Manage Updates on Systems
   hosts: windows
+  gather_facts: false
   vars:
     log_file: C:\Windows\Temp\ansible_available_updates.txt
     access_token: ""
