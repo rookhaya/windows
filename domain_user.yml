@@ -18,8 +18,6 @@
         surname: ABM
         password: Accel2021@
         state: present
-        groups:
-          - developers
         street: virage
         city: dakar
         state_province: senegal
