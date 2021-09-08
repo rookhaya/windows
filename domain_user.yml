@@ -13,9 +13,9 @@
       ignore_protection: yes
    - name: Creating a new user
      win_domain_user:
-        name: Mbaye
-        firstname: Alioune
-        surname: ABM
+        name: Belk
+        firstname: Sylvestre
+        surname: SB
         password: Accel2021@
         state: present
         
