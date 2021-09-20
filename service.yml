@@ -1,0 +1,8 @@
+---
+- name: play for service windows
+  hosts: windows
+  tasks:
+    - name: check service
+      win_service:
+        name: Anydesk
+        state: started
