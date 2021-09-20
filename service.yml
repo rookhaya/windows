@@ -4,5 +4,5 @@
   tasks:
     - name: check service
       win_service:
-        name: Anydesk
+        name: l1000_ga
         state: started
