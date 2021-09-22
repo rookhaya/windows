@@ -1,6 +1,7 @@
 ---
 - name: Manage Updates on Systems
   hosts: windows
+  gather_facts: false
   vars:
     log_file: C:\Windows\Temp\ansible_available_updates.txt
     access_token: ""
@@ -8,11 +9,11 @@
   tasks:
     - name: Microsoft update servers are queried
       win_updates:
-        category_names: '*'
+        category_names: CriticalUpdates
         state: searched
         log_path: "{{ log_file }}"
 
-    - name: Available security updates are captured
+    - name: Available Critical updates are captured
       win_shell: "type {{ log_file }}"
       register: file_output
 
@@ -21,7 +22,12 @@
         msg: "Available updates found!"
       when: "'Adding update' in file_output.stdout"
 
-    - name: Install all security updates with automatic reboots
+    - name: critical updates are applied
       win_updates:
-        category_names: '*'
-        reboot: yes
+        category_name: CriticalUpdates
+      register: updates_status
+
+    - name: Server is rebooted
+      win_reboot:
+      when: updates_status.reboot_required
+   
