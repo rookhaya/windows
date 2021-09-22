@@ -1,0 +1,23 @@
+---
+- name:  Storing date
+  hosts: localhost
+  tasks:
+   - name: Get ansible date/time facts
+     setup:
+       filter: "ansible_date_time"
+       gather_subset: "!all"
+
+   - name: Store DTG as fact
+     set_fact:
+       DTG: "{{ ansible_date_time.date }}"
+
+  run_once: true
+
+- name: creating backup file
+  hosts: windows
+  tasks:
+    - name: task backup
+      win_shell: Backup-SqlDatabase -ServerInstance  localhost -Database test -BackupAction Database   -BackupFile LONASE_TRESO-{{hostvars.localhost.DTG}}.bak
+~
+~
+~
